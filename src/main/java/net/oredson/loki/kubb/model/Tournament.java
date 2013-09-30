@@ -1,10 +1,11 @@
 package net.oredson.loki.kubb.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable
@@ -20,8 +21,15 @@ public class Tournament {
 	
 	@DatabaseField
 	private Date date;
-	private List<TournamentTeam> teams = new ArrayList<TournamentTeam>();
-	private List<Round> rounds = new ArrayList<Round>();
+
+	@ForeignCollectionField(orderColumnName="order")
+	private ForeignCollection<TournamentTeam> tournamentTeams;
+
+	@ForeignCollectionField(orderColumnName="order")
+	private ForeignCollection<Round> rounds;
+	
+	@DatabaseField(dataType=DataType.ENUM_STRING)
+	private TournamentStrategy tournamentStrategy;
 	
 	public Tournament() {
 		// Auto-generated constructor stub
@@ -57,20 +65,28 @@ public class Tournament {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	public List<TournamentTeam> getTeams() {
-		return teams;
+
+	public ForeignCollection<TournamentTeam> getTournamentTeams() {
+		return tournamentTeams;
 	}
-	
-	public void setTeams(List<TournamentTeam> teams) {
-		this.teams = teams;
+
+	public void setTournamentTeams(ForeignCollection<TournamentTeam> tournamentTeams) {
+		this.tournamentTeams = tournamentTeams;
 	}
-	
-	public List<Round> getRounds() {
+
+	public ForeignCollection<Round> getRounds() {
 		return rounds;
 	}
-	
-	public void setRounds(List<Round> rounds) {
+
+	public void setRounds(ForeignCollection<Round> rounds) {
 		this.rounds = rounds;
+	}
+
+	public TournamentStrategy getTournamentStrategy() {
+		return tournamentStrategy;
+	}
+
+	public void setTournamentStrategy(TournamentStrategy tournamentStrategy) {
+		this.tournamentStrategy = tournamentStrategy;
 	}
 }
