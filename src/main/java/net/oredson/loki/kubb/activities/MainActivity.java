@@ -2,10 +2,14 @@ package net.oredson.loki.kubb.activities;
 
 import net.oredson.loki.kubb.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class HelloAndroidActivity extends Activity
+public class MainActivity extends Activity
 {
 
 	/**
@@ -19,15 +23,17 @@ public class HelloAndroidActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+		setContentView(R.layout.main);
+		
+		Button add = (Button) findViewById(R.id.players);
+		add.setOnClickListener(new OnClickListener() {
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(net.oredson.loki.kubb.R.menu.main, menu);
-		return true;
+			public void onClick(View v) {
+				// Open the manage player activity
+				Intent intent = new Intent(getBaseContext(), ManagePlayerActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 }
 
