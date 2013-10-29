@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class KubbDatabaseHelper extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "lokikubb.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 5;
 
 	public KubbDatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -18,6 +18,7 @@ public class KubbDatabaseHelper extends SQLiteOpenHelper {
 		PlayerTable.onCreate(database);
 		TeamTable.onCreate(database);
 		TournamentTable.onCreate(database);
+		TournamentTeamTable.onCreate(database);
 	}
 
 	@Override
@@ -26,5 +27,6 @@ public class KubbDatabaseHelper extends SQLiteOpenHelper {
 		PlayerTable.onUpgrade(database, oldVersion, newVersion);
 		TeamTable.onUpgrade(database, oldVersion, newVersion);
 		TournamentTable.onUpgrade(database, oldVersion, newVersion);
+		TournamentTeamTable.onUpgrade(database, oldVersion, newVersion);
 	}
 }

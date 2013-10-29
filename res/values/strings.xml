@@ -4,6 +4,8 @@
     <string name="app_name">DMK Klassic</string>
     <string name="action_settings">Settings</string>
     <string name="add_player">Add Player</string>
+    <string name="add_team">Add Team</string>
+    <string name="add_tournament">Add Tournament</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="location">Location</string>
@@ -12,9 +14,18 @@
     <string name="cancel">Cancel</string>
     <string name="players">Players</string>
     <string name="teams">Teams</string>
+    <string name="team_name">Team Name</string>
     <string name="tournaments">Tournaments</string>
+    <string name="tournament_name">Tournament Name</string>
     <string name="rounds">Rounds</string>
     <string name="matches">Matches</string>
     <string name="games">Games</string>
     
+    <string name="title_activity_manage_players">Manage Players</string>
+    <string name="title_activity_manage_teams">Manage Teams</string>
+    <string name="title_activity_manage_tournaments">Manage Tournaments</string>
+
+    <string name="title_activity_edit_player">Edit Player</string>
+    <string name="title_activity_edit_team">Edit Team</string>
+    <string name="title_activity_edit_tournament">Edit Tournament</string>
 </resources>

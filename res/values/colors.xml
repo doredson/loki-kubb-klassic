@@ -1,0 +1,6 @@
+<resources>
+
+    <color name="actionbar_text">@color/maroon</color>
+    <color name="maroon">#800000</color>
+
+</resources>

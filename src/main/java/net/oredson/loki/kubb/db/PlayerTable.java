@@ -18,8 +18,10 @@ public class PlayerTable {
 			+ "("
 			+ COLUMN_ID + " integer primary key autoincrement, "
 			+ COLUMN_FNAME + " text not null, "
-			+ COLUMN_LNAME + " text not null,"
-			+ COLUMN_LOCATION + " text not null"
+			+ COLUMN_LNAME + " text not null, "
+			+ COLUMN_LOCATION + " text not null, "
+			+ TableConstants.COLUMN_GUID + " text not null, "
+			+ TableConstants.COLUMN_DIRTY + " integer default 1"
 			+ ");";
 
 	public static void onCreate(SQLiteDatabase database) {

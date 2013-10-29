@@ -6,7 +6,7 @@ import android.util.Log;
 public class TeamTable {
 
 	// Database table
-	public static final String TABLE_NAME = "team";
+	public static final String TABLE_NAME = "teams";
 	public static final String COLUMN_ID = "_id";
 	public static final String COLUMN_NAME = "name";
 	public static final String COLUMN_LOCATION = "location";
@@ -17,7 +17,9 @@ public class TeamTable {
 			+ "("
 			+ COLUMN_ID + " integer primary key autoincrement, "
 			+ COLUMN_NAME + " text not null, "
-			+ COLUMN_LOCATION + " text not null"
+			+ COLUMN_LOCATION + " text not null, "
+			+ TableConstants.COLUMN_GUID + " text not null, "
+			+ TableConstants.COLUMN_DIRTY + " integer default 1"
 			+ ");";
 
 	public static void onCreate(SQLiteDatabase database) {

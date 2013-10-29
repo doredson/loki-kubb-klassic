@@ -5,7 +5,7 @@
     android:versionName="0.0.1" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -53,18 +53,34 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ManagePlayerActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.EditPlayerActivity" />
+        <!-- Player -->
+        <activity android:name=".activities.ManagePlayerActivity" 
+            android:label="@string/title_activity_manage_players"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity android:name=".activities.EditPlayerActivity"  
+            android:label="@string/title_activity_edit_player"
+            android:parentActivityName=".activities.ManagePlayerActivity"/>
+        
+        <!-- Team -->
+        <activity android:name=".activities.ManageTeamActivity"  
+            android:label="@string/title_activity_manage_teams"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity android:name=".activities.EditTeamActivity"  
+            android:label="@string/title_activity_edit_team"
+            android:parentActivityName=".activities.ManageTeamActivity" />
+        
+        <!-- Tournament -->
+        <activity android:name=".activities.ManageTournamentActivity"  
+            android:label="@string/title_activity_manage_tournaments"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity android:name=".activities.EditTournamentActivity"  
+            android:label="@string/title_activity_edit_tournament"
+            android:parentActivityName=".activities.ManageTournamentActivity" />
         
         <!-- ContentProviders. We are using one ContentProvider per table.
         These are not made available to other applications, so exported=false -->
         <provider
-            android:name=".providers.PlayerContentProvider"
+            android:name=".providers.KubbContentProvider"
             android:authorities="net.oredson.loki.kubb"
             android:exported="false" />
 

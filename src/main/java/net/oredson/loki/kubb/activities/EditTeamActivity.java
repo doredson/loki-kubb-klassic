@@ -1,13 +1,12 @@
 package net.oredson.loki.kubb.activities;
 
-import net.oredson.loki.kubb.fragments.PlayerDetailsFragment;
+import net.oredson.loki.kubb.fragments.TeamDetailsFragment;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-public class EditPlayerActivity extends Activity
+public class EditTeamActivity extends Activity
 {
-
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -28,7 +27,7 @@ public class EditPlayerActivity extends Activity
 			rowId = extras.getString("rowId");
 		}
 
-		PlayerDetailsFragment details = PlayerDetailsFragment.newInstance(rowId);
+		TeamDetailsFragment details = TeamDetailsFragment.newInstance(rowId);
 		getFragmentManager().beginTransaction().add(android.R.id.content, details).commit();
 	}
 }

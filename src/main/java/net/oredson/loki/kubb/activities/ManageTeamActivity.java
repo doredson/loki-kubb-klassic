@@ -4,12 +4,12 @@ import net.oredson.loki.kubb.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class ManagePlayerActivity extends Activity
+public class ManageTeamActivity extends Activity
 {
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.players_layout);
+		setContentView(R.layout.teams_layout);
 	}
 }
